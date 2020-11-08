@@ -62,6 +62,7 @@ rulesUnsorted: Sequence[Dict[str, str]]=(  # taken from "Learn Plover!" website.
 		'HR': 'rh',
 		'SR': 'ser',
 		'STWNR': 'serv',
+		'TWR': 'qu', # not part of the theory
 	},
 	{
 		'I': 'i',
@@ -119,6 +120,11 @@ rulesUnsorted: Sequence[Dict[str, str]]=(  # taken from "Learn Plover!" website.
 		'lhs': 'zes',
 	},
 )
+def postprocess(parts: List[str], components: List[str])->None:
+	if parts[4]=="nl": # not part of the theory, make -ious, -uous and -eous more convenient
+		assert components[4]=="s"
+		components[4]="ous"
+
 rules: Sequence[Dict[str, str]]=tuple(
 		dict(sorted(rule.items(), key=lambda x: -len(x[0])))
 		for rule in rulesUnsorted
@@ -152,7 +158,10 @@ def lookup(strokes: List[str])->str:
 	stroke=strokes[0]
 	match=main_regex.fullmatch(stroke)
 	assert match
-	components=[replace(match[index+1], rule) for index, rule in enumerate(rules)]
+	parts=[match[index+1] for index in range(len(rules))]
+	components=[replace(part, rule) for part, rule in zip(parts, rules)]
+	postprocess(parts, components)
+
 	middle=components.pop(2) # substring of XZxz
 	main="".join(components)
 
