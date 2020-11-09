@@ -4,7 +4,7 @@ import subprocess
 import sys
 import re
 data=""
-regex=re.compile(r"\s*'(.+)':\s*'(.+)',?\s*$")
+regex=re.compile(r"\s*'(.+)':\s*'(.+)',?\s*(?:#.*)?$")
 for line in sys.stdin.readlines():
 	line=line.strip()
 	match=regex.fullmatch(line)

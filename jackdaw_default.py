@@ -101,16 +101,20 @@ rulesUnsorted: Sequence[Dict[str, str]]=(  # taken from "Learn Plover!" website.
 		'lc': 'p',
 		'nl': 's',
 		'nh': 'v',
+		'rh': 'w',
 		'lgh': 'x',
 		'lh': 'z',
 
 		# right hand optional
+		'chs': 'd',
 		'lgc': 'bl',
 		'gct': 'ck',
 		'rng': 'gn',
+		'ngc': 'gg',
 		'lgct': 'ckl',
 		'ncs': 'nces',
 		'nlc': 'sp',
+		'ght': 'ght',
 		'ht': 'th',
 		'nct': 'tion',
 		'cht': 'tch',
@@ -118,6 +122,7 @@ rulesUnsorted: Sequence[Dict[str, str]]=(  # taken from "Learn Plover!" website.
 		'rnh': 'wn',
 		'rlh': 'wl',
 		'lhs': 'zes',
+		'cte': 'cate',
 	},
 )
 def postprocess(parts: List[str], components: List[str])->None:
