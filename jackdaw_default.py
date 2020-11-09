@@ -99,13 +99,13 @@ rulesUnsorted: Sequence[Dict[str, str]]=(  # taken from "Learn Plover!" website.
 		'gt': 'k',
 		'ngh': 'm',
 		'lc': 'p',
-		'nl': 's',
 		'nh': 'v',
 		'rh': 'w',
 		'lgh': 'x',
 		'lh': 'z',
 
 		# right hand optional
+		'nl': 's',
 		'chs': 'd',
 		'lgc': 'bl',
 		'gct': 'ck',
