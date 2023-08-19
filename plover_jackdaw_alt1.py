@@ -3,7 +3,7 @@ IMPLICIT_HYPHEN_KEYS=KEYS
 SUFFIX_KEYS=()
 NUMBER_KEY=None
 NUMBERS={}
-UNDO_STROKE_STENO=None
+UNDO_STROKE_STENO="z"
 
 
 KEYMAPS = {
@@ -37,6 +37,37 @@ KEYMAPS = {
 		"e"    : "-D",
 		"y"    : "-Z",
 		"no-op": ("Fn", "pwr", "res1", "res2"),
+    },
+    'Keyboard': {
+		"4"    : "q",
+		"S"    : "a",
+		"C"    : "w",
+		"T"    : "s",
+		"W"    : "e",
+		"H"    : "d",
+		"N"    : "r",
+		"R"    : "f",
+		"I"    : ("x", "1"),
+		"E"    : "c",
+		"A"    : "v",
+		"X"    : "t",
+		"Z"    : "g",
+		"x"    : "y",
+		"z"    : "h",
+		"a"    : "n",
+		"o"    : "m",
+		"u"    : (",", "2"),
+		"r"    : "u",
+		"n"    : "j",
+		"l"    : "i",
+		"g"    : "k",
+		"c"    : "o",
+		"h"    : "l",
+		"t"    : "p",
+		"s"    : ";",
+		"e"    : "[",
+		"y"    : "'",
+		"arpeggiate": "space",
     },
 }
 ORTHOGRAPHY_RULES= {}
